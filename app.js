@@ -19,9 +19,6 @@ app.listen(5000, function(){
   console.log('Application running on port 5000!');
 });
 
-//06618353
-//josealejandro20712922A
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
