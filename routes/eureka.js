@@ -1,14 +1,20 @@
 var express = require('express');
 var router = express.Router();
+var os = require('os');
+
+var networkInt = os.networkInterfaces();
+var localIp =  networkInt.Ethernet[1].address;//windows
+//var localIp =  networkInt.eth0[0].address; //linux
+console.log(localIp);
 
 const Eureka = require('eureka-js-client').Eureka;
 
 const eureka = new Eureka({
   instance: {
     app: 'nodeService',
-    hostName: 'localhost',
-    ipAddr: '127.0.0.1',
-    statusPageUrl: 'http://localhost:5000/status',
+    hostName: os.hostname(),
+    ipAddr: localIp,
+    statusPageUrl: 'http://'+localIp+':5000/status',
     port: {
       '$': 5000,
       '@enabled': 'true',
