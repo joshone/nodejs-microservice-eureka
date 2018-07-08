@@ -3,6 +3,7 @@ Microservice in nodejs and eureka discovery
 
 Instrucciones:
 Descargar docker conteniendo ubuntu
+>docker search ubuntu
 >docker run -it ubuntu ./bin/bash
 
 Entrando por ssh:
