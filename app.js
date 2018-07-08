@@ -24,7 +24,7 @@ const eureka = new Eureka({
     app: 'nodeService',
     hostName: 'localhost',
     ipAddr: '127.0.0.1',
-    statusPageUrl: 'http://localhost:5000',
+    statusPageUrl: 'http://localhost:5000/status',
     port: {
       '$': 5000,
       '@enabled': 'true',
